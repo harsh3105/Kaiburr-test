@@ -1,0 +1,23 @@
+version: '2'
+services:
+  api-database:
+    image: mongo:4.0.4
+    container_name: "mongodb"
+    ports:
+      - 27017:27019
+    command: --smallfiles
+  api:
+    image: server
+    ports:
+      - 8086:8086
+    environment:
+      - SPRING_PROFILES_ACTIVE=mongodb,remote
+      - spring.data.mongodb.uri=mongodb://mongodb:27017/
+      - spring.data.mongodb.authentication-database=admin
+      - spring.data.mongodb.username=admin
+      - spring.data.mongodb.password=netwitness
+    links:
+      - api-database
+    depends_on:
+      - api-database
+

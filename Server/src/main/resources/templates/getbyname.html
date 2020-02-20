@@ -1,0 +1,13 @@
+<!DOCTYPE  html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+    <title>Get By Name</title>
+</head>
+    <form method="POST" th:action="@{/findByName}" th:object="${foo}">
+        <label>Name</label>
+        <input type="text"  id="name" th:field="*{name}">
+        <br>
+         <input type="submit" />
+    </form>
+</html>

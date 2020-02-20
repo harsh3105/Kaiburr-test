@@ -1,0 +1,22 @@
+<!DOCTYPE  html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+    <title>Add</title>
+</head>
+    <form th:method="POST"  th:object="${server}" th:action="@{/addServer}">
+        <label>ID</label>
+        <input type="text" name="id" th:field="*{id}">
+        <br>
+        <label>Name</label>
+        <input type="text" name="name" th:field="*{name}">
+        <br>
+        <label>language</label>
+        <input type="text" name="language" th:field="*{language}">
+        <br>
+        <label>framework</label>
+        <input type="text" name="framework" th:field="*{framework}">
+        <br>
+        <button type="submit"> Submit </button>
+    </form>
+</html>
